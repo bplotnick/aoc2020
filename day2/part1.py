@@ -1,5 +1,6 @@
 import logging
 from collections import defaultdict
+from typing import Dict
 
 filename = "input.txt"
 
@@ -9,14 +10,14 @@ def check_pass(line: str) -> bool:
     letter = letter.rstrip(":")
 
     left, right = length_req.split("-")
-    left = int(left)
-    right = int(right)
+    left_count = int(left)
+    right_count = int(right)
 
-    counts = defaultdict(int)
+    counts: Dict[str, int] = defaultdict(int)
     for l in password:
         counts[l] += 1
 
-    if counts[letter] >= left and counts[letter] <= right:
+    if counts[letter] >= left_count and counts[letter] <= right_count:
         return True
 
     return False

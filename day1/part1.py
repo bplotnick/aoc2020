@@ -1,4 +1,5 @@
 from typing import List
+from typing import Optional
 
 FILENAME = "input.txt"
 
@@ -9,7 +10,7 @@ def read_file(path: str) -> List[int]:
     return sorted(i)
 
 
-def find_nums(nums: List[int]) -> int:
+def find_nums(nums: List[int]) -> Optional[int]:
     l = 0
     r = len(nums) - 1
     while l < r:
@@ -21,6 +22,7 @@ def find_nums(nums: List[int]) -> int:
             r -= 1
         else:
             l += 1
+    return None
 
 
 def main():

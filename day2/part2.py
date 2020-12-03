@@ -9,10 +9,10 @@ def check_pass(line: str) -> bool:
     letter = letter.rstrip(":")
 
     left, right = length_req.split("-")
-    left = int(left) - 1
-    right = int(right) - 1
+    left_idx = int(left) - 1
+    right_idx = int(right) - 1
 
-    if (password[left] == letter) ^ (password[right] == letter):
+    if (password[left_idx] == letter) ^ (password[right_idx] == letter):
         return True
 
     return False
